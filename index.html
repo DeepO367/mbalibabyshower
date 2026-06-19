@@ -88,6 +88,12 @@ body{
 }
 
 /* RSVP SECTION */
+.rsvp-section h2{
+    font-family:'Great Vibes',cursive;
+    font-size:3rem;
+    color:var(--brown);
+    margin-bottom:20px;
+}
 .rsvp-section{
     text-align:center;
     padding:100px 20px;
@@ -420,6 +426,96 @@ footer{
     font-size:0.9rem;
     letter-spacing:1px;
 }
+
+.theme-colors{
+    display:flex;
+    gap:8px;
+    margin:8px 0;
+}
+
+.theme-dot{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    border:1px solid rgba(0,0,0,0.1);
+}
+
+.theme-dot.brown{
+    background:#8B6B4F;
+}
+
+.theme-dot.white{
+    background:#FFFFFF;
+}
+
+.theme-dot.beige{
+    background:#DCC7A1;
+}
+
+.music-toggle{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    background:#8B6B4F;
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+    z-index:9999;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+.venue-details{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.venue-details h3{
+    color:var(--brown);
+    font-size:1.6rem;
+    margin-bottom:10px;
+}
+
+.venue-details p{
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+.venue-note{
+    margin-top:15px;
+    color:var(--brown);
+    font-style:italic;
+}
+
+@media(max-width:768px){
+
+    .venue-details h3{
+        font-size:1.3rem;
+    }
+
+    .venue-details p{
+        font-size:1rem;
+    }
+
+}
+
 </style>
 </head>
 
@@ -427,6 +523,14 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
+
+<audio id="bgMusic" autoplay loop muted>
+    <source src="Purity.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicToggle" class="music-toggle">
+    🔇
+</button>
 
     <div class="bear-container">
         <!-- Replace with your bear image path -->
@@ -448,13 +552,25 @@ footer{
 
     <div class="detail-item">
         <span class="label">📅 Date</span>
-        <span class="value">08 August</span>
+        <span class="value">08 August 2026</span>
     </div>
 
     <div class="detail-item">
         <span class="label">🕛 Arrival Time</span>
         <span class="value">12:00 PM</span>
     </div>
+
+    <div class="detail-item">
+    <span class="label">🤎 Theme</span>
+
+    <div class="theme-colors">
+        <span class="theme-dot brown"></span>
+        <span class="theme-dot white"></span>
+        <span class="theme-dot beige"></span>
+    </div>
+
+    <span class="value">Brown, White & Beige</span>
+</div>
 
 </div>
 
@@ -510,6 +626,21 @@ footer{
 
     <h2>Venue Location</h2>
 
+    <div class="venue-details">
+
+    <h3>📍 Venue Address</h3>
+
+    <p>
+        306 Jubilee Drive<br>
+        Randburg<br>
+        Johannesburg
+    </p>
+
+    <p class="venue-note">
+        We look forward to celebrating Baby Bounce with you 🤎🧸
+    </p>
+
+</div>
     <div class="map-container">
 
         <iframe
@@ -598,6 +729,29 @@ window.onclick = function(event){
     }
 }
 
+</script>
+
+<script>
+const music = document.getElementById("bgMusic");
+const toggle = document.getElementById("musicToggle");
+
+toggle.addEventListener("click", async () => {
+
+    try {
+        await music.play();
+
+        if(music.muted){
+            music.muted = false;
+            toggle.innerHTML = "🔊";
+        } else {
+            music.muted = true;
+            toggle.innerHTML = "🔇";
+        }
+    } catch(err){
+        console.log(err);
+    }
+
+});
 </script>
 
 </body>
