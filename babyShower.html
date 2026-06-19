@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mbali Motshwene's Baby Shower</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --cream:#F8F3EE;
+    --light-brown:#E4C8AA;
+    --brown:#B68A64;
+    --dark-brown:#6D4C41;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--cream);
+    color:var(--dark-brown);
+    overflow-x:hidden;
+}
+
+/* HERO SECTION */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:50px;
+    gap:60px;
+    background:
+    linear-gradient(
+        135deg,
+        #f8f3ee 0%,
+        #f3e7da 100%
+    );
+}
+
+.bear-container{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.bear-container img{
+    width:100%;
+    max-width:500px;
+    animation:floatBear 4s ease-in-out infinite;
+}
+
+@keyframes floatBear{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-25px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h1{
+    font-family:'Great Vibes',cursive;
+    font-size:5rem;
+    line-height:1.1;
+    color:var(--brown);
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:1.2rem;
+    max-width:500px;
+    color:var(--dark-brown);
+}
+
+/* RSVP SECTION */
+.rsvp-section{
+    text-align:center;
+    padding:100px 20px;
+    background: #E1DCC9;
+}
+.registry-section h2{
+    font-family:'Great Vibes',cursive;
+    font-size:3rem;
+    color:var(--brown);
+    margin-bottom:20px;
+}
+
+/* REGISTRY SECTION */
+.registry-section{
+    text-align:center;
+    padding:100px 20px;
+    background:white;
+}
+
+.registry-section h2{
+    font-family:'Great Vibes',cursive;
+    font-size:3rem;
+    color:var(--brown);
+    margin-bottom:20px;
+}
+
+.registry-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:18px 40px;
+    border-radius:50px;
+    text-decoration:none;
+    background:var(--brown);
+    color:white;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+.registry-btn:hover{
+    background:var(--dark-brown);
+    transform:translateY(-3px);
+}
+
+/* LOCATION SECTION */
+.location{
+    padding:80px 20px;
+    background:var(--cream);
+}
+
+.location h2{
+    text-align:center;
+    font-family:'Great Vibes',cursive;
+    font-size:3rem;
+    color:var(--brown);
+    margin-bottom:40px;
+}
+
+.map-container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.map-container iframe{
+    width:100%;
+    height:500px;
+    border:none;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    background:var(--brown);
+    color:white;
+}
+
+@media(max-width:900px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+    padding-top:60px;
+}
+
+.hero-text h1{
+    font-size:3.5rem;
+}
+
+.bear-container img{
+    max-width:350px;
+}
+
+}
+
+/* MODALS */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.75);
+    z-index:9999;
+    padding:20px;
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-content{
+    width:100%;
+    max-width:1100px;
+    height:90vh;
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+}
+
+.modal-content h2{
+    text-align:center;
+    padding:20px;
+    color:var(--brown);
+    background:var(--cream);
+    margin:0;
+}
+
+.modal-content iframe{
+    width:100%;
+    height:calc(100% - 80px);
+    border:none;
+}
+
+.close{
+    position:absolute;
+    right:20px;
+    top:10px;
+    font-size:2rem;
+    cursor:pointer;
+    color:var(--dark-brown);
+    z-index:10;
+}
+
+/* Tablet */
+
+@media (max-width: 768px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        gap:30px;
+        padding:40px 20px;
+    }
+
+    .hero-text h1{
+        font-size:3rem;
+    }
+
+    .hero-text p{
+        font-size:1rem;
+        margin:auto;
+    }
+
+    .bear-container img{
+        max-width:280px;
+    }
+
+    .modal-content{
+        height:95vh;
+        border-radius:15px;
+    }
+
+    .map-container iframe{
+        height:400px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px){
+
+    .hero{
+        min-height:auto;
+        padding:30px 15px 60px;
+    }
+
+    .hero-text h1{
+        font-size:2.3rem;
+    }
+
+    .registry-section h2,
+    .rsvp-section h2,
+    .location h2{
+        font-size:2.2rem;
+    }
+
+    .registry-btn{
+        width:100%;
+        max-width:320px;
+        padding:16px;
+    }
+
+    .bear-container img{
+        max-width:220px;
+    }
+
+    .map-container iframe{
+        height:300px;
+    }
+
+    .modal{
+        padding:10px;
+    }
+
+    .modal-content{
+        height:96vh;
+    }
+}
+
+.registry-content{
+    height:auto;
+    max-width:600px;
+    padding:60px;
+    text-align:center;
+}
+
+.registry-content p{
+    margin:20px 0;
+}
+
+.event-details{
+    margin:30px 0;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.detail-item{
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(8px);
+    padding:15px 20px;
+    border-radius:16px;
+    min-width:180px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.detail-item .label{
+    display:block;
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--brown);
+    margin-bottom:5px;
+}
+
+.detail-item .value{
+    display:block;
+    font-size:1.1rem;
+    font-weight:500;
+    color:var(--dark-brown);
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+.event-details{
+    justify-content:center;
+}
+
+.detail-item{
+    width:100%;
+    max-width:320px;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+.hero-buttons .registry-btn{
+    width:100%;
+    max-width:320px;
+}
+
+.scroll-indicator{
+    margin-top:40px;
+    text-align:center;
+}
+
+.mouse{
+    width:35px;
+    height:60px;
+    border:3px solid var(--brown);
+    border-radius:25px;
+    margin:0 auto 15px;
+    position:relative;
+}
+
+.wheel{
+    width:6px;
+    height:12px;
+    background:var(--brown);
+    border-radius:20px;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:10px;
+    animation:scrollWheel 2s infinite;
+}
+
+@keyframes scrollWheel{
+    0%{
+        opacity:1;
+        top:10px;
+    }
+
+    100%{
+        opacity:0;
+        top:30px;
+    }
+}
+
+.scroll-indicator p{
+    color:var(--brown);
+    font-size:0.9rem;
+    letter-spacing:1px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="bear-container">
+        <!-- Replace with your bear image path -->
+        <img src="2.png" alt="Teddy Bear">
+    </div>
+
+    <div class="hero-text">
+        <h1>
+            Mbali Motshwene's<br>
+            Baby Shower Invitation
+        </h1>
+
+       <p>
+    Join us as we celebrate the upcoming arrival of our Baby Bounce.
+    We can't wait to share this special day with you.
+</p>
+
+<div class="event-details">
+
+    <div class="detail-item">
+        <span class="label">📅 Date</span>
+        <span class="value">08 August</span>
+    </div>
+
+    <div class="detail-item">
+        <span class="label">🕛 Arrival Time</span>
+        <span class="value">12:00 PM</span>
+    </div>
+
+</div>
+
+<div class="scroll-indicator">
+
+    <div class="mouse">
+        <div class="wheel"></div>
+    </div>
+
+    <p>Scroll to Explore</p>
+
+</div>
+    </div>
+
+</section>
+
+<section class="rsvp-section">
+
+    <h2>RSVP Here</h2>
+
+    <p>
+        Click below to confirm your attendance by completing the RSVP form.
+    </p>
+
+    <button
+        class="registry-btn"
+        onclick="openModal('rsvpModal')"
+    >
+        RSVP Now
+    </button>
+
+</section>
+
+<section class="registry-section">
+
+    <h2>Baby Registry</h2>
+
+    <p>
+        Click below to view the baby registry and choose a gift for Baby Bounce.
+    </p>
+
+    <button
+        class="registry-btn"
+        onclick="openModal('registryModal')"
+    >
+        View Registry
+    </button>
+
+</section>
+
+<!-- LOCATION -->
+<section class="location">
+
+    <h2>Venue Location</h2>
+
+    <div class="map-container">
+
+        <iframe
+            src="https://maps.google.com/maps?q=306%20Jubilee%20Drive%20Randburg&t=&z=15&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+
+    </div>
+
+</section>
+
+<footer>
+    With Love ❤️ We Look Forward To Celebrating With You
+</footer>
+
+<!-- RSVP MODAL -->
+<div id="rsvpModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal('rsvpModal')">
+            &times;
+        </span>
+
+        <h2>RSVP Form</h2>
+
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeTOur7uaMIQXr6nM1i_5dsS-RZMqbSkc7U7JcQdwg3LpZhIQ/viewform?embedded=true">
+        </iframe>
+
+    </div>
+
+</div>
+
+<!-- REGISTRY MODAL -->
+<div id="registryModal" class="modal">
+    <div class="modal-content registry-content">
+
+        <span class="close" onclick="closeModal('registryModal')">
+            &times;
+        </span>
+
+        <h2>Baby Registry</h2>
+
+        <p>
+            Our registry is hosted on Babies R Us.
+        </p>
+
+        <p>
+            Click below to view Baby Bounce's wishlist.
+        </p>
+
+        <a
+            href="https://www.babiesrus.co.za/dreambox/view/index/id/183647/"
+            target="_blank"
+            class="registry-btn"
+        >
+            Open Registry
+        </a>
+
+    </div>
+</div>
+
+<script>
+
+function openModal(id){
+    document.getElementById(id).style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function closeModal(id){
+    document.getElementById(id).style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+window.onclick = function(event){
+
+    const rsvpModal = document.getElementById("rsvpModal");
+    const registryModal = document.getElementById("registryModal");
+
+    if(event.target === rsvpModal){
+        closeModal("rsvpModal");
+    }
+
+    if(event.target === registryModal){
+        closeModal("registryModal");
+    }
+}
+
+</script>
+
+</body>
+</html>
